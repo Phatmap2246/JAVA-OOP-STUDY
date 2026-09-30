@@ -178,4 +178,73 @@ public class Pupil extends Person {
     public boolean isEligibleForReward(){
         return (this.gpa >=8.0 && this.conduct == 3);
     }
+
+    // Menu
+    public static void pupilMenu() {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Pupil> pupilList = new ArrayList<>();
+        int choice = -1;
+
+        while (choice != 0) {
+            System.out.println("\n=================================");
+            System.out.println("     PUPIL MANAGEMENT SYSTEM     ");
+            System.out.println("=================================");
+            System.out.println("1. Add a new Pupil (Nhap them hoc sinh)");
+            System.out.println("2. Display all Pupils (Xem danh sach)");
+            System.out.println("3. Show Pupils eligible for reward (Danh sach khen thuong)");
+            System.out.println("0. Exit (Thoat)");
+            System.out.print("Your choice: ");
+            
+            choice = sc.nextInt();
+            
+            switch (choice) {
+                case 1:
+                    Pupil newPupil = new Pupil();
+                    newPupil.inputPupil(); // Đã bao gồm gọi super.inputPerson()
+                    pupilList.add(newPupil);
+                    System.out.println("[+] Successfully added a new pupil!");
+                    break;
+                    
+                case 2:
+                    if (pupilList.isEmpty()) {
+                        System.out.println("[!] The list is currently empty!");
+                    } else {
+                        System.out.println("\n--- LIST OF ALL PUPILS ---");
+                        for (int i = 0; i < pupilList.size(); i++) {
+                            System.out.println("Pupil #" + (i + 1));
+                            pupilList.get(i).printPupil();
+                            System.out.println("--------------------------");
+                        }
+                    }
+                    break;
+                    
+                case 3:
+                    if (pupilList.isEmpty()) {
+                        System.out.println("[!] The list is currently empty!");
+                    } else {
+                        System.out.println("\n--- ELIGIBLE FOR REWARD LIST ---");
+                        boolean hasRewardedPupil = false;
+                        for (Pupil p : pupilList) {
+                            if (p.isEligibleForReward()) { // Sử dụng hàm cậu đã viết cực xịn
+                                p.printPupil();
+                                System.out.println("--------------------------");
+                                hasRewardedPupil = true;
+                            }
+                        }
+                        
+                        if (!hasRewardedPupil) {
+                            System.out.println("[!] No pupils meet the reward criteria (GPA >= 8.0 & Excellent Conduct).");
+                        }
+                    }
+                    break;
+                    
+                case 0:
+                    System.out.println("Exiting Pupil Menu...");
+                    break;
+                    
+                default:
+                    System.out.println("[!] Invalid choice! Please select 0-3.");
+            }
+        }
+    }
 }

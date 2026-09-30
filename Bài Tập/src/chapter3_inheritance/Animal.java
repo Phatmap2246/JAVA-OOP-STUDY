@@ -160,8 +160,8 @@ public void setAnimalGender(int newAnimalGender){
     int oldGender = this.animalGender;
     this.animalGender = newAnimalGender;
     if (!this.isValidAge()) {
-        System.out.println("[!] Update Animal Gender Failed! Resetting animal gender to the old gender.("+this.getGenderName()+")");
         this.animalGender = oldGender;
+        System.out.println("[!] Update Animal Gender Failed! Resetting animal gender to the old gender.("+this.getGenderName()+")");
     }
 }
 
