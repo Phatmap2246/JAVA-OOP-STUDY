@@ -1,0 +1,8 @@
+# Bỏ qua các file rác biên dịch của Java
+*.class
+/bin/
+/out/
+/build/
+
+# Bỏ qua cấu hình cá nhân của VS Code
+.vscode/
