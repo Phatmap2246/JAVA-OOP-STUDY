@@ -42,11 +42,10 @@ public class Pupil extends Person {
 
     //Input & Print
 
-    public void inputPupil(){
+    public void input(Scanner sc){
         System.out.println("--- ENTER PUPIL INFORMATION ---");
         super.inputPerson();
 
-        Scanner sc = new Scanner(System.in);
         System.out.print("Please enter Pupil ID: ");
         this.pupilID = sc.nextLine();
 
@@ -83,7 +82,7 @@ public class Pupil extends Person {
         
     }
 
-    public void printPupil(){
+    public void print(){
         System.out.println("--- PRINT PUPIL INFORMATION ---");
         super.printPersonInformation();
 
@@ -200,7 +199,7 @@ public class Pupil extends Person {
             switch (choice) {
                 case 1:
                     Pupil newPupil = new Pupil();
-                    newPupil.inputPupil(); // Đã bao gồm gọi super.inputPerson()
+                    newPupil.input(sc); // Đã bao gồm gọi super.inputPerson()
                     pupilList.add(newPupil);
                     System.out.println("[+] Successfully added a new pupil!");
                     break;
@@ -212,7 +211,7 @@ public class Pupil extends Person {
                         System.out.println("\n--- LIST OF ALL PUPILS ---");
                         for (int i = 0; i < pupilList.size(); i++) {
                             System.out.println("Pupil #" + (i + 1));
-                            pupilList.get(i).printPupil();
+                            pupilList.get(i).print();
                             System.out.println("--------------------------");
                         }
                     }
@@ -226,7 +225,7 @@ public class Pupil extends Person {
                         boolean hasRewardedPupil = false;
                         for (Pupil p : pupilList) {
                             if (p.isEligibleForReward()) { // Sử dụng hàm cậu đã viết cực xịn
-                                p.printPupil();
+                                p.print();
                                 System.out.println("--------------------------");
                                 hasRewardedPupil = true;
                             }
