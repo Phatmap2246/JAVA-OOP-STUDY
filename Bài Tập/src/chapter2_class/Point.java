@@ -18,8 +18,7 @@ public class Point {
     }
 
     // Input & Print
-    public void inputPoint() {
-        Scanner sc = new Scanner(System.in);
+    public void inputPoint(Scanner sc) {
         System.out.print("Please enter x: ");
         this.x = sc.nextFloat();
         System.out.print("Please enter y: ");
@@ -62,7 +61,7 @@ public class Point {
             switch (subChoice) {
                 case 1:
                     Point p = new Point();
-                    p.inputPoint();
+                    p.inputPoint(sc);
                     list.add(p);
                     System.out.println("Point added successfully.");
                     break;

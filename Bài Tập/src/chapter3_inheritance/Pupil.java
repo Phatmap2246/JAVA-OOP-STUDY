@@ -44,7 +44,7 @@ public class Pupil extends Person {
 
     public void input(Scanner sc){
         System.out.println("--- ENTER PUPIL INFORMATION ---");
-        super.inputPerson();
+        super.inputPerson(sc);
 
         System.out.print("Please enter Pupil ID: ");
         this.pupilID = sc.nextLine();

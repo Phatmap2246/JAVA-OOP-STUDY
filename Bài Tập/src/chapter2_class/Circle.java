@@ -15,8 +15,7 @@ public class Circle {
     }
 
     // Input & Print
-    public void inputCircle() {
-        Scanner sc = new Scanner(System.in);
+    public void inputCircle(Scanner sc) {
         System.out.println("=========================");
         System.out.print("Please enter radius: ");
         this.radius = sc.nextFloat();
@@ -45,8 +44,7 @@ public class Circle {
     public void setRadius(float radius) { this.radius = radius; }
 
     // Menu Circle Class
-    public static void circleMenu() {
-        Scanner sc = new Scanner(System.in);
+    public static void circleMenu(Scanner sc) {
         ArrayList<Circle> list = new ArrayList<>();
         int subChoice = -1;
 
@@ -64,7 +62,7 @@ public class Circle {
             switch (subChoice) {
                 case 1:
                     Circle c = new Circle();
-                    c.inputCircle();
+                    c.inputCircle(sc);
                     list.add(c);
                     System.out.println("Circle added successfully.");
                     break;
@@ -86,7 +84,7 @@ public class Circle {
                     System.out.print("Enter index to adjust (0 to " + (list.size() - 1) + "): ");
                     int idxEdit = sc.nextInt();
                     if (idxEdit >= 0 && idxEdit < list.size()) {
-                        list.get(idxEdit).inputCircle();
+                        list.get(idxEdit).inputCircle(sc);
                         System.out.println("Adjusted successfully!");
                     } else {
                         System.out.println("Invalid index!");

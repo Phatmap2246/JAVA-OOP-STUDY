@@ -18,8 +18,7 @@ public class Rectangle {
     }
 
     // Input & Print
-    public void inputRectangle() {
-        Scanner sc = new Scanner(System.in);
+    public void inputRectangle(Scanner sc) {
         System.out.println("=========================");
         System.out.print("Please enter length: ");
         this.length = sc.nextFloat();
@@ -72,7 +71,7 @@ public class Rectangle {
             switch (subChoice) {
                 case 1:
                     Rectangle rect = new Rectangle();
-                    rect.inputRectangle();
+                    rect.inputRectangle(sc);
                     list.add(rect);
                     System.out.println("Rectangle added successfully.");
                     break;
@@ -94,7 +93,7 @@ public class Rectangle {
                     System.out.print("Enter index to adjust (0 to " + (list.size() - 1) + "): ");
                     int idxEdit = sc.nextInt();
                     if (idxEdit >= 0 && idxEdit < list.size()) {
-                        list.get(idxEdit).inputRectangle();
+                        list.get(idxEdit).inputRectangle(sc);
                         System.out.println("Adjusted successfully!");
                     } else {
                         System.out.println("Invalid index!");

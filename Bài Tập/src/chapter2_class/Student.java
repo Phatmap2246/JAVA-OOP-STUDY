@@ -41,16 +41,15 @@ public class Student {
 
     // Function
 
-    public void inputStudent(){
+    public void inputStudent(Scanner sc){
         System.out.println("=========================");
-        Scanner sc = new Scanner(System.in);
         System.out.print("Please enter ID: ");
             this.studentID = sc.nextLine();
         System.out.print("Please input Name: ");
             this.studentName = sc.nextLine();
         System.out.print("Please press Class: ");
             this.studentClass = sc.nextLine();
-        this.studentAddress.inputAddress();
+        this.studentAddress.inputAddress(sc);
         System.out.print("Please press Subject 1 score: ");
             this.sub1Score = sc.nextFloat();
         System.out.print("Please press Subject 2 score: ");
@@ -61,6 +60,7 @@ public class Student {
     }
 
     public void printStudent(){
+        System.out.println("Total students: "+this.countStudent);
         System.out.println("=========================");
         System.out.println("Student ID: "+this.studentID);
         System.out.println("Student Name: "+this.studentName);
@@ -92,6 +92,12 @@ public class Student {
     }
     public float getStudentSub3Score(){
         return this.sub3Score;
+    }
+    public int getCountStudent(){
+        return this.countStudent;
+    }
+    public Address getStudentAddress(){
+        return this.studentAddress;
     }
 
     // Set
@@ -154,7 +160,7 @@ public class Student {
             switch (subChoice) {
                 case 1:
                     Student newStudent = new Student();
-                    newStudent.inputStudent();
+                    newStudent.inputStudent(sc);
                     list.add(newStudent);
                     System.out.println("Student added successfully.");
                 break;
@@ -179,7 +185,7 @@ public class Student {
                     for(Student s : list){
                         if (s.getStudentID().equalsIgnoreCase(adjustID)) {
                             System.out.println("Please enter student's new information");
-                            s.inputStudent();
+                            s.inputStudent(sc);
                             Edited = true;
                             System.out.println("Adjusted successfully");
                             s.printStudent();

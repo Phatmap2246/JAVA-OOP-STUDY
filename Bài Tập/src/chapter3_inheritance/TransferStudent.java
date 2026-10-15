@@ -24,9 +24,8 @@ public class TransferStudent extends Student{
         this.trainingType = trainingType;
     }
 
-    public void inputTransferStudent(){
-        super.inputStudent();
-        Scanner sc = new Scanner(System.in);
+    public void inputTransferStudent(Scanner sc){
+        super.inputStudent(sc);
         System.out.print("Please enter transfer student Entry level: ");
             this.entryLevel = sc.nextLine();
         System.out.print("Please enter transfer student Graduate school: ");

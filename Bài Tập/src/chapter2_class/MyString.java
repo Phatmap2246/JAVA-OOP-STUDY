@@ -14,8 +14,7 @@ public class MyString {
     }
 
     // Input & Print
-    public void inputString() {
-        Scanner sc = new Scanner(System.in);
+    public void inputString(Scanner sc) {
         System.out.print("Please enter a string: ");
         this.str = sc.nextLine();
     }
@@ -80,7 +79,7 @@ public class MyString {
 
             switch (subChoice) {
                 case 1:
-                    myStr.inputString();
+                    myStr.inputString(sc);
                     break;
                 case 2:
                     myStr.printString();

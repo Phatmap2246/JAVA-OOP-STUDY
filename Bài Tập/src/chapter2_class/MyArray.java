@@ -18,8 +18,7 @@ public class MyArray {
     }
 
     // 1. Nhập mảng ban đầu
-    public void inputArray() {
-        Scanner sc = new Scanner(System.in);
+    public void inputArray(Scanner sc) {
         System.out.print("Enter number of elements (size): ");
         this.size = sc.nextInt();
         this.arr = new int[this.size];
@@ -100,7 +99,7 @@ public class MyArray {
 
             switch (subChoice) {
                 case 1:
-                    myArr.inputArray();
+                    myArr.inputArray(sc);
                     break;
                 case 2:
                     myArr.printArray();

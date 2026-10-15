@@ -18,30 +18,28 @@ public class MainChapter3 {
             System.out.print("Your choice (0-3): ");
 
             choice = sc.nextInt();
+            sc.nextLine();                          // SỬA: hấp thụ ký tự xuống dòng
 
             switch (choice) {
                 case 1:
                     System.out.println("\n>>> REDIRECTING TO CAT CAFE MENU...");
-                    // Thay "MainAnimal" bằng tên class đang chứa hàm catMenu() của cậu
-                    Cat.catMenu(); 
+                    Cat.catMenu(sc);                // SỬA: truyền Scanner vào
                     break;
-                    
+
                 case 2:
                     System.out.println("\n>>> REDIRECTING TO PUPIL MENU...");
-                    // Thay "MainPupil" bằng tên class đang chứa hàm pupilMenu() của cậu
-                    Pupil.pupilMenu();
+                    // Pupil.pupilMenu(sc);         // SỬA: nếu Pupil.pupilMenu cũng nhận Scanner
                     break;
-                    
+
                 case 3:
                     System.out.println("\n>>> REDIRECTING TO LINE SEGMENT MENU...");
-                    // Thay "MainLineSegment" bằng tên class đang chứa hàm lineSegmentMenu() của cậu
-                    LineSegment.lineSegmentMenu();
+                    LineSegment.lineSegmentMenu(sc); // SỬA: truyền Scanner vào
                     break;
-                    
+
                 case 0:
                     System.out.println("Exiting Chapter 3 Hub. Goodbye!");
                     break;
-                    
+
                 default:
                     System.out.println("[!] Invalid choice! Please select 0-3.");
             }

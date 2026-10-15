@@ -23,9 +23,8 @@ public class PointColor extends Point{
     }
 
     // Input, Print
-    public void inputColorPoint(){
-        super.inputPoint();
-        Scanner sc = new Scanner(System.in);
+    public void inputColorPoint(Scanner sc){
+        super.inputPoint(sc);
         while (true) {
             System.out.println("=============================");
             System.out.println("Sample colors: ");
@@ -54,8 +53,7 @@ public class PointColor extends Point{
     public String getColorName(){
         return sampleColor.get(this.color -1);
     }
-    public void setColorPoint(){
-        Scanner sc = new Scanner(System.in);
+    public void setColorPoint(Scanner sc){
         while (true) {
             System.out.println("=============================");
             System.out.println("Sample colors: ");
@@ -88,7 +86,7 @@ public class PointColor extends Point{
             switch (subChoice) {
                 case 1:
                     PointColor p = new PointColor();
-                    p.inputColorPoint();
+                    p.inputColorPoint(sc);
                     list.add(p);
                     System.out.println("Add your color point successfully");
                     break;
@@ -118,7 +116,7 @@ public class PointColor extends Point{
                         }
                         System.out.println("Please enter your point ordinal number AGAIN.");
                     }
-                    list.get(ordinalNumber).setColorPoint();
+                    list.get(ordinalNumber).setColorPoint(sc);
                     break;
                 case 4: 
                     if (list.isEmpty()) {
