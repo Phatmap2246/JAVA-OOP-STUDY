@@ -1,5 +1,6 @@
 package chapter3_inheritance;
 import java.util.Scanner;
+
 public class Address {
     private String homeAddress;
     private String street;
@@ -14,9 +15,12 @@ public class Address {
         this.street = "";
         this.quarter = "";
         this.ward = "";
+        this.city = "";      // THÊM dòng này (trước đây thiếu)
         this.country = "";
     }
-    public Address(String homeAddress,String street ,String quarter, String ward, String city, String country){
+    
+    public Address(String homeAddress, String street, String quarter, 
+                   String ward, String city, String country){
         this.homeAddress = homeAddress;
         this.street = street;
         this.quarter = quarter;
@@ -25,8 +29,8 @@ public class Address {
         this.country = country;
     }
 
-    public void inputAddress(){
-        Scanner sc = new Scanner(System.in);
+    // SỬA: nhận Scanner từ ngoài vào, không tạo mới
+    public void inputAddress(Scanner sc){
         System.out.println("================================");
         System.out.print("Please enter your home address: ");
             this.homeAddress = sc.nextLine();
@@ -41,9 +45,13 @@ public class Address {
         System.out.print("Please enter your country: ");
             this.country = sc.nextLine();
     }
+    
     public void printAddress(){
-        System.out.println("Your address: "+this.homeAddress +", "+this.street+" street, "+this.quarter+" quarter, "+this.ward+" ward, "+this.city+" city, "+this.country+".");
+        System.out.println("Your address: " + this.homeAddress + ", " + this.street 
+                         + " street, " + this.quarter + " quarter, " + this.ward 
+                         + " ward, " + this.city + " city, " + this.country + ".");
     }
+    
     // Setter, Getter
     public String getHomeAdress(){
         return this.homeAddress;
@@ -70,7 +78,9 @@ public class Address {
     }
 
     public String getFullAddress(){
-        return "Your address: "+this.homeAddress +", "+this.street+" street, "+this.quarter+" quarter, "+this.ward+" ward, "+this.city+" city, "+this.country+".";
+        return "Your address: " + this.homeAddress + ", " + this.street 
+             + " street, " + this.quarter + " quarter, " + this.ward 
+             + " ward, " + this.city + " city, " + this.country + ".";
     }
 
     public void setHomeAdress(String homeAddress){

@@ -19,8 +19,7 @@ public class Fraction {
     }
 
     // Input & Print
-    public void inputFraction() {
-        Scanner sc = new Scanner(System.in);
+    public void inputFraction(Scanner sc) {
         System.out.print("Please enter numerator (Tu so): ");
         this.numerator = sc.nextInt();
         do {
@@ -101,7 +100,7 @@ public class Fraction {
             switch (subChoice) {
                 case 1:
                     Fraction f = new Fraction();
-                    f.inputFraction();
+                    f.inputFraction(sc);
                     list.add(f);
                     System.out.println("Fraction added and simplified successfully.");
                     break;

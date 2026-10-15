@@ -25,7 +25,7 @@ public class MainChapter2 {
             switch (mainChoice) {
                 case 1: Point.pointMenu(); break;
                 case 2: Rectangle.rectangleMenu(); break;
-                case 3: Circle.circleMenu(); break;
+                case 3: Circle.circleMenu(sc); break;
                 case 4: Student.studentMenu(); break;
                 case 5: Fraction.fractionMenu(); break;
                 case 6: MyInteger.integerMenu(); break;

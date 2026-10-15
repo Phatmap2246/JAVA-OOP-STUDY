@@ -14,8 +14,7 @@ public class MyInteger {
     }
 
     // Input & Print
-    public void inputInteger() {
-        Scanner sc = new Scanner(System.in);
+    public void inputInteger(Scanner sc) {
         System.out.print("Please enter an integer: ");
         this.value = sc.nextInt();
     }
@@ -71,7 +70,7 @@ public class MyInteger {
 
             switch (subChoice) {
                 case 1:
-                    myInt.inputInteger();
+                    myInt.inputInteger(sc);
                     System.out.println("Input successfully!");
                     break;
                 case 2:

@@ -18,9 +18,9 @@ public class StudentList {
     }
 
     // 1. Nhập 1 sinh viên mới vào danh sách
-    public void addOneStudent() {
+    public void addOneStudent(Scanner sc) {
         Student newSv = new Student();
-        newSv.inputStudent();
+        newSv.inputStudent(sc);
         this.list = Arrays.copyOf(this.list, this.count + 1);
         this.list[this.count] = newSv;
         this.count++;
@@ -73,11 +73,11 @@ public class StudentList {
     }
 
     // 5. Sửa thông tin sinh viên theo Mã SV (ID)
-    public boolean updateStudentByID(String id) {
+    public boolean updateStudentByID(Scanner sc,String id) {
         Student target = searchStudentByID(id);
         if (target == null) return false;
         System.out.println("Enter new information for student ID " + id + ":");
-        target.inputStudent();
+        target.inputStudent(sc);
         return true;
     }
 
@@ -105,7 +105,7 @@ public class StudentList {
 
             switch (subChoice) {
                 case 1:
-                    ds.addOneStudent();
+                    ds.addOneStudent(sc);
                     break;
                 case 2:
                     ds.printStudentList();
@@ -124,7 +124,7 @@ public class StudentList {
                 case 4:
                     System.out.print("Enter student ID to update: ");
                     String updateID = sc.nextLine();
-                    if (ds.updateStudentByID(updateID)) {
+                    if (ds.updateStudentByID(sc,updateID)) {
                         System.out.println("Updated successfully!");
                     } else {
                         System.out.println("No student found with ID: " + updateID);

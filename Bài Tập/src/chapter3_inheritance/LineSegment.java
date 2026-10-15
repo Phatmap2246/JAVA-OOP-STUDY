@@ -10,30 +10,28 @@ public class LineSegment {
     private Point point2;
 
     // Constructors
-
-    public LineSegment(){
+    public LineSegment() {
         this.point1 = new Point();
         this.point2 = new Point();
     }
 
-    public LineSegment(Point point1, Point point2){
+    public LineSegment(Point point1, Point point2) {
         this.point1 = point1;
         this.point2 = point2;
     }
 
     // Input & Print
-
-    public void inputLine(){
+    public void inputLine(Scanner sc) {           // SỬA: nhận Scanner từ ngoài
         System.out.println("--- INPUT TWO POINTS ---");
-        
+
         System.out.println("Point 1: ");
-        this.point1.inputPoint();
+        this.point1.inputPoint(sc);               // SỬA: truyền Scanner vào Point
 
         System.out.println("Point 2: ");
-        this.point2.inputPoint();
+        this.point2.inputPoint(sc);               // SỬA: truyền Scanner vào Point
     }
 
-    public void printLine(){
+    public void printLine() {
         System.out.println("--- PRINT TWO POINTS ---");
 
         System.out.println("Point 1: ");
@@ -42,19 +40,21 @@ public class LineSegment {
         System.out.println("Point 2: ");
         this.point2.printPoint();
 
-        System.out.println("Distance: "+this.getDistance());
+        System.out.println("Distance: " + this.getDistance());
     }
 
-    public double getDistance(){
-        float x1 = this.point1.getX(), x2 = this.point2.getX(), y1 = this.point1.getY(), y2 = this.point2.getY();
-        double distance = Math.sqrt((Math.pow((x1-x2),2)+Math.pow((y1-y2), 2)));
+    public double getDistance() {
+        float x1 = this.point1.getX();
+        float x2 = this.point2.getX();
+        float y1 = this.point1.getY();
+        float y2 = this.point2.getY();
+        double distance = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
         return distance;
     }
 
-    // menu
-    public static void lineSegmentMenu() {
-        Scanner sc = new Scanner(System.in);
-        ArrayList<LineSegment> lineList = new ArrayList<>(); 
+    // Menu
+    public static void lineSegmentMenu(Scanner sc) {   // SỬA: nhận Scanner từ ngoài
+        ArrayList<LineSegment> lineList = new ArrayList<>();
         int choice = -1;
 
         while (choice != 0) {
@@ -66,18 +66,19 @@ public class LineSegment {
             System.out.println("3. Find the longest Line Segment (Tim doan thang dai nhat)");
             System.out.println("0. Exit (Thoat)");
             System.out.print("Your choice: ");
-            
+
             choice = sc.nextInt();
-            
+            sc.nextLine();                             // SỬA: hấp thụ ký tự xuống dòng
+
             switch (choice) {
                 case 1:
                     System.out.println("\n[+] ADDING NEW LINE SEGMENT");
                     LineSegment newLine = new LineSegment();
-                    newLine.inputLine(); 
+                    newLine.inputLine(sc);             // SỬA: truyền Scanner vào
                     lineList.add(newLine);
                     System.out.println("[+] Successfully added a new Line Segment!");
                     break;
-                    
+
                 case 2:
                     if (lineList.isEmpty()) {
                         System.out.println("[!] The list is currently empty!");
@@ -90,29 +91,28 @@ public class LineSegment {
                         }
                     }
                     break;
-                    
+
                 case 3:
                     if (lineList.isEmpty()) {
                         System.out.println("[!] The list is currently empty!");
                     } else {
                         System.out.println("\n--- THE LONGEST LINE SEGMENT ---");
                         LineSegment longestLine = lineList.get(0);
-                        
-                        // Quét mảng tìm đoạn thẳng có distance lớn nhất
+
                         for (LineSegment line : lineList) {
                             if (line.getDistance() > longestLine.getDistance()) {
                                 longestLine = line;
                             }
                         }
-                        
+
                         longestLine.printLine();
                     }
                     break;
-                    
+
                 case 0:
                     System.out.println("Exiting Line Segment Menu...");
                     break;
-                    
+
                 default:
                     System.out.println("[!] Invalid choice! Please select 0-3.");
             }

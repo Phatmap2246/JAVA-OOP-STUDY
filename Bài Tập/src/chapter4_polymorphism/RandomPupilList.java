@@ -67,4 +67,6 @@ public class RandomPupilList {
             list.get(i).print();
         }
     }
+
+    
 }
