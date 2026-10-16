@@ -29,6 +29,35 @@ public abstract class Cattle {
     }
 
     public abstract void makeSound();
-    public  abstract float createMilk();
+    public abstract float createMilk();
 
+    public String getCattleID() {
+        return cattleID;
+    }
+
+    public int getCattleGender() {
+        return cattleGender;
+    }
+
+    public int getCattleFeeling() {
+        return cattleFeeling;
+    }
+
+    public ArrayList<String> getGenderList() {
+        return genderList;
+    }
+
+    public void setCattleID(String cattleID) {
+        this.cattleID = cattleID;
+    }
+
+    public void setCattleGender(int cattleGender) {
+        this.cattleGender = cattleGender;
+    }
+
+    public void setCattleFeeling(int cattleFeeling) {
+        this.cattleFeeling = cattleFeeling;
+    }
+
+    
 }
