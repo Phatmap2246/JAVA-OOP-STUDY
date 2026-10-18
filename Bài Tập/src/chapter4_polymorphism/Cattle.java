@@ -5,6 +5,8 @@ public abstract class Cattle {
     protected String cattleID;
     protected int cattleGender;
     protected int cattleFeeling;
+    protected int male;
+    protected int female;
 
     protected final ArrayList<String> genderList = new ArrayList<>(Arrays.asList("Male","Female"));
 
@@ -47,6 +49,8 @@ public abstract class Cattle {
         return genderList;
     }
 
+    
+
     public void setCattleID(String cattleID) {
         this.cattleID = cattleID;
     }
@@ -59,5 +63,22 @@ public abstract class Cattle {
         this.cattleFeeling = cattleFeeling;
     }
 
+    public int getMale() {
+        return male;
+    }
+
+    public int getFemale() {
+        return female;
+    }
+
+    public void setMale(int male) {
+        this.male = male;
+    }
+
+    public void setFemale(int female) {
+        this.female = female;
+    }
+
+    
     
 }
