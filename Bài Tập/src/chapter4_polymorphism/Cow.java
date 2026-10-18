@@ -1,5 +1,6 @@
 package chapter4_polymorphism;
 import java.util.Random;
+
 public class Cow extends Cattle {
     @Override 
     public void makeSound(){
@@ -8,8 +9,7 @@ public class Cow extends Cattle {
 
     @Override 
     public float createMilk(){
-        if(this.getCattleGender() == 0)return 0;
         Random rand = new Random();
-        return rand.nextFloat(21);
+        return rand.nextFloat() * 21; // Sữa từ 0 đến 20 lít
     }
 }
