@@ -38,6 +38,13 @@ public class LyThuyet extends MonHoc {
         }
         
     }
+    public void hienThiThongTin(){
+        super.hienThiThongTin();
+        System.out.println("Diem Tieu Luan: "+this.diemTieuLuan);
+        System.out.println("Diem Cuoi Ky: "+this.diemCuoiKy);
+        System.out.println("Diem TB: "+this.tinhDiemTB());
+        System.out.println("Diem chu: "+this.xepLoaiDiemChu());
+    }
 
     @Override 
     public double tinhDiemTB(){

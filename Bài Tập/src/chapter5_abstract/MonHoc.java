@@ -32,8 +32,6 @@ public abstract class MonHoc {
         System.out.println("Ma mon hoc: "+this.maMonHoc);
         System.out.println("Ten mon hoc: "+this.tenMonHoc);
         System.out.println("So tin chi: "+this.soTinChi);
-        System.out.println("Diem trung binh: "+this.tinhDiemTB());
-        System.out.println("Diem chu: "+this.xepLoaiDiemChu());
     }
 
     public abstract double tinhDiemTB();
