@@ -37,6 +37,13 @@ public class DoAn extends MonHoc{
             System.out.println("Invalid score !");
         }
     }
+    public void hienThiThongTin(){
+        super.hienThiThongTin();
+        System.out.println("Diem GVHD: "+this.diemGVHD);
+        System.out.println("Diem GVPB: "+this.diemGVPB);
+        System.out.println("Diem TB: "+this.tinhDiemTB());
+        System.out.println("Diem chu: "+this.xepLoaiDiemChu());
+    }
     public double tinhDiemTB(){
         return (this.diemGVHD+this.diemGVPB)/2;
     }

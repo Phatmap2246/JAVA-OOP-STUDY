@@ -64,8 +64,16 @@ public class ThucHanh extends MonHoc {
             }
             System.out.println("Invalid score !");
         }
-        
-        
+    }
+
+    public void hienThiThongTin(){
+        super.hienThiThongTin();
+        System.out.println("Diem Diem 1: "+this.diem1);
+        System.out.println("Diem Diem 2: "+this.diem2);
+        System.out.println("Diem Diem 3: "+this.diem3);
+        System.out.println("Diem Diem 4: "+this.diem4);
+        System.out.println("Diem TB: "+this.tinhDiemTB());
+        System.out.println("Diem chu: "+this.xepLoaiDiemChu());
     }
 
     public void setDiem1(double diem1) {
@@ -95,4 +103,5 @@ public class ThucHanh extends MonHoc {
     public void setDiem4(double diem4) {
         this.diem4 = diem4;
     }
+    
 }
