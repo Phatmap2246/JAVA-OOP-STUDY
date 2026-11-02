@@ -1,0 +1,37 @@
+BAN|HD001|Nguyễn Văn A|0.0
+CT|SP01|Sữa tươi Vinamilk|2|15000.0|0.0
+CT|SP02|Bánh mì sandwich|1|10000.0|0.0
+NHAP|HDN001|Công ty Sữa Việt Nam|NCC01|10.0|50000.0
+CT|SP01|Sữa tươi Vinamilk|100|10000.0|0.0
+CT|SP03|Sữa chua nếp cẩm|50|5000.0|0.0
+BAN|HD002|Trần Thị B|10000.0
+CT|SP04|Mì Hảo Hảo|10|5000.0|10.0
+BAN|HD003|Lê Văn C|0.0
+CT|SP05|Nước suối Aquafina|5|10000.0|0.0
+NHAP|HDN002|Công ty Bánh kẹo Kinh Đô|NCC02|8.0|30000.0
+CT|SP02|Bánh mì sandwich|200|8000.0|0.0
+CT|SP06|Kẹo mút|100|2000.0|0.0
+BAN|HD004|Phạm Thị D|5000.0
+CT|SP07|Dầu ăn Tường An|2|45000.0|0.0
+NHAP|HDN003|Đại lý Nước giải khát|NCC03|5.0|100000.0
+CT|SP05|Nước suối Aquafina|1000|5000.0|0.0
+BAN|HD005|Hoàng Văn E|0.0
+CT|SP08|Giấy ăn|20|15000.0|5.0
+BAN|HD006|Ngô Thị F|20000.0
+CT|SP09|Trứng gà|30|3000.0|0.0
+CT|SP10|Thịt heo ba rọi|2|120000.0|0.0
+NHAP|HDN004|Nông trại sạch|NCC04|0.0|20000.0
+CT|SP09|Trứng gà|500|2500.0|0.0
+CT|SP10|Thịt heo ba rọi|100|100000.0|0.0
+BAN|HD007|Vũ Văn G|15000.0
+CT|SP11|Cà phê G7|3|50000.0|0.0
+NHAP|HDN005|Công ty Cà phê Trung Nguyên|NCC05|10.0|0.0
+CT|SP11|Cà phê G7|200|40000.0|0.0
+BAN|HD008|Đỗ Thị H|0.0
+CT|SP12|Mì tôm|1|15000.0|0.0
+NHAP|HDN006|Công ty Vật tư|NCC06|5.0|15000.0
+CT|SP12|Mì tôm|1000|12000.0|0.0
+BAN|HD009|Bùi Văn I|0.0
+CT|SP13|Sữa đặc|5|25000.0|0.0
+BAN|HD010|Đinh Thị K|30000.0
+CT|SP14|Bột giặt|1|180000.0|0.0
